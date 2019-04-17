@@ -1,0 +1,9 @@
+github:
+    1.push
+        git  push origin master
+        1.1 avoid to input username and password
+            1.1.1 create .git-credentials under ~ direction and add content,as follows:
+                https://{username}:{password}@github.com   
+            1.1.2 run command 'git config --global credential.helper store' and will add related content to ~/.gitconfig, as follows:
+                [credential]
+                    helper = store
