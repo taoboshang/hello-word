@@ -24,3 +24,7 @@ github:
 git:
     1. use git user.name to replace current commit author
         git commit --amend --reset-author
+docker:
+    1. access vm local registry.
+       run command "service firewalld stop" in vm based on centos7
+    

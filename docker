@@ -1,0 +1,3 @@
+docker:
+    1. access vm local registry.
+       run command "service firewalld stop" in vm based on centos7
