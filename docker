@@ -10,3 +10,6 @@ docker:
        FROM scratch
        COPY --from=builder /hello /hello
        CMD  ["/hello"]
+    3. add bash, ash, sh, csh and so on. add ls and other bin from other base image.
+        COPY --from=busybox /bin/ash /bin/ash
+        COPY --from=busybox /bin/ls /bin/ls
