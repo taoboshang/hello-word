@@ -1,3 +1,12 @@
 docker:
     1. access vm local registry.
        run command "service firewalld stop" in vm based on centos7
+
+    2. build based image: note: -static , it indicate the compiler will compile all code to bin.
+       FROM gcc:5 as builder
+       COPY ./helloworld.c /helloworld.c
+       RUN  gcc -o hello -static /helloworld.c && chmod +x hello
+
+       FROM scratch
+       COPY --from=builder /hello /hello
+       CMD  ["/hello"]
