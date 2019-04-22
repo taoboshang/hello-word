@@ -16,3 +16,8 @@ docker:
      4. copy file from running-container
         docker run -d --name nginx-name nginx
         docker cp nginx-name:/etc/nginx/nginx.conf .
+     5. deploy a simple nginx
+        5.1 docker pull nginx
+        # '/root/www/nginx/html' need to be created by yourself. '/usr/share/nginx/html' is the nginx root direction.
+        5.2 docker run -d -p 8080:80 --name nginx -v /root/www/nginx/html:/usr/share/nginx/html nginx
+        5.3 curl http://localhost:8080 or input "http://hostip:8080" in browser.
