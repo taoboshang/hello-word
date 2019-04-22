@@ -39,3 +39,8 @@ docker:
     3. add bash, ash, sh, csh and so on. add ls and other bin from other base image.
         COPY --from=busybox /bin/ash /bin/ash
         COPY --from=busybox /bin/ls /bin/ls
+    4. copy file from running-container
+        docker run -d --name nginx-name nginx
+        docker cp nginx-name:/etc/nginx/nginx.conf .
+
+
